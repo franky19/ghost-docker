@@ -45,6 +45,8 @@ services:
       tinybird__stats__endpoint: ${TINYBIRD_API_URL:-https://api.tinybird.co}
     volumes:
       - ${UPLOAD_LOCATION:-./data/ghost}:/var/lib/ghost/content
+      - ./data/ghost/package/core/built:/var/lib/ghost/current/core/built
+      - ./data/ghost/package/core/server:/var/lib/ghost/current/core/server
     depends_on:
       db:
         condition: service_healthy
