@@ -153,7 +153,7 @@ class UnsafeData {
             }
             return url;
         }
-        catch (e) {
+        catch {
             throw new errors_1.default.ValidationError({ message: `${this.field} must be a valid URL` });
         }
     }

@@ -29,12 +29,12 @@ class RecommendationMetadataService {
                 try {
                     return JSON.parse(response.body);
                 }
-                catch (e) {
+                catch {
                     return undefined;
                 }
             }
         }
-        catch (e) {
+        catch {
             return undefined;
         }
     }
@@ -45,7 +45,7 @@ class RecommendationMetadataService {
         try {
             return new URL(url);
         }
-        catch (e) {
+        catch {
             return null;
         }
     }

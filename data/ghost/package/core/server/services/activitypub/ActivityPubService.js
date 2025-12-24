@@ -69,7 +69,7 @@ class ActivityPubService {
     async getWebhookSecret() {
         try {
             const token = await this.getOwnerUserToken();
-            const res = await (0, node_fetch_1.default)(new URL('.ghost/activitypub/v1/site', this.siteUrl), {
+            const res = await (0, node_fetch_1.default)(new URL('.ghost/activitypub/v1/site/', this.siteUrl), {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -151,7 +151,7 @@ class ActivityPubService {
     async disableSite() {
         try {
             const token = await this.getOwnerUserToken();
-            await (0, node_fetch_1.default)(new URL('.ghost/activitypub/v1/site', this.siteUrl), {
+            await (0, node_fetch_1.default)(new URL('.ghost/activitypub/v1/site/', this.siteUrl), {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`
